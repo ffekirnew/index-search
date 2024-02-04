@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ffekirnew/go-project/concierge/internal/common"
-	"github.com/ffekirnew/go-project/concierge/pkg/api"
+	"github.com/random-starlord/index-search/concierge/internal/common"
+	"github.com/random-starlord/index-search/concierge/pkg/api"
 )
 
 func main() {

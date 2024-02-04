@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sort"
 
-	"github.com/ffekirnew/go-project/librarian/internal/common"
+	"github.com/random-starlord/index-search/librarian/internal/common"
 )
 
 type docResult struct {

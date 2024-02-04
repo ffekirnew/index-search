@@ -1,3 +1,3 @@
-module github.com/ffekirnew/go-project/concierge
+module github.com/random-starlord/index-search/concierge
 
 go 1.21.3

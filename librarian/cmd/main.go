@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/ffekirnew/go-project/librarian/internal/common"
-	"github.com/ffekirnew/go-project/librarian/pkg/api"
+	"github.com/random-starlord/index-search/librarian/internal/common"
+	"github.com/random-starlord/index-search/librarian/pkg/api"
 )
 
 func main() {

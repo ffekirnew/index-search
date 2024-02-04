@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ffekirnew/go-project/concierge/internal/common"
+	"github.com/random-starlord/index-search/concierge/internal/common"
 )
 
 type payload struct {

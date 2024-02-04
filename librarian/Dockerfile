@@ -1,7 +1,7 @@
 FROM golang:1.21
 
-ADD ./cmd/ /go/src/github.com/ffekirnew/go-project/librarian
+ADD . /go/src/github.com/random-starlord/index-search/librarian
 
-RUN go install github.com/ffekirnew/go-project/librarian@latest
+RUN go install github.com/random-starlord/index-search/librarian@latest
 
 ENTRYPOINT /go/bin/librarian

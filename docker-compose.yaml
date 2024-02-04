@@ -33,7 +33,3 @@ services:
       - a_m_librarian
       - n_z_librarian
       - others_librarian
-  front-end:
-    build: ./front-end
-    ports:
-      - ${FRONT_END_PORT}:${FRONT_END_PORT}

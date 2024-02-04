@@ -10,7 +10,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/ffekirnew/go-project/concierge/internal/common"
+	"github.com/random-starlord/index-search/concierge/internal/common"
 )
 
 var librarianEndpoints = map[string]string{}
