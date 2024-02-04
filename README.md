@@ -1,1 +1,2 @@
-# index-search
+# go-project
+Repository for Go project.
