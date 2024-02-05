@@ -73,6 +73,8 @@ func getResultsMap(ch <-chan queryResult) map[string]int {
 }
 
 func QueryHandler(w http.ResponseWriter, r *http.Request) {
+	common.EnableCors(&w, r)
+
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		w.Write([]byte(`{"code": 405, "msg": "Method Not Allowed."}`))

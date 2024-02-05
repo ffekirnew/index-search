@@ -1,4 +1,4 @@
-IMAGE = goophr-librarian
+IMAGE = librarian
 GOPKGS = $(shell go list ./...)
 GOOS = linux
 GOARCH = amd64

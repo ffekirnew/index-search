@@ -1,4 +1,4 @@
-import "@fontsource/lora/700.css";
+import "@fontsource-variable/playfair-display";
 import "@fontsource/inter/400.css";
 
 import React from "react";

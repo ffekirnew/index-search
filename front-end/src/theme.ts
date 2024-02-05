@@ -6,7 +6,7 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   fonts: {
-    heading: `'Lora', sans-serif`,
+    heading: `'Playfair Display', serif`,
     body: `'Inter', sans-serif`,
   },
   config,

@@ -4,7 +4,6 @@ import {
   Image,
   HStack,
   StackDivider,
-  Spacer,
   Heading,
   useColorMode,
 } from "@chakra-ui/react";

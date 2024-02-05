@@ -1,5 +1,5 @@
 {
-  "name": "a2sv-contest-monitoring-webapp",
+  "name": "index-search",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@fontsource-variable/playfair-display": "^5.0.19",
+    "@fontsource/dm-serif-display": "^5.0.18",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/lora": "^5.0.8",
     "@hookform/resolvers": "^3.3.4",

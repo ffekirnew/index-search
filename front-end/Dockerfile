@@ -27,9 +27,7 @@ COPY --from=build /usr/src/app/public ./public
 
 # Install only production dependencies
 RUN npm install --production
-
-# Expose the port used by your application
-EXPOSE 3000
+RUN npm install --global vite
 
 # Run the application
 CMD ["npm", "run", "preview"]

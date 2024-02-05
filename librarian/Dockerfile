@@ -1,7 +1,11 @@
 FROM golang:1.21
-
-ADD . /go/src/github.com/random-starlord/index-search/librarian
-
-RUN go install github.com/random-starlord/index-search/librarian@latest
-
-ENTRYPOINT /go/bin/librarian
+ 
+WORKDIR /app
+ 
+COPY . .
+ 
+RUN go mod download
+ 
+RUN go build -o /godocker ./cmd/main.go
+ 
+CMD [ "/godocker" ]

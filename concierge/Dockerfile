@@ -1,7 +1,11 @@
 FROM golang:1.21
-
-ADD . /go/src/github.com/random-starlord/index-search/concierge
-
-RUN go install github.com/random-starlord/index-search/concierge@latest
-
-ENTRYPOINT /go/bin/concierge
+ 
+WORKDIR /app
+ 
+COPY . .
+ 
+RUN go mod download
+ 
+RUN go build -o /godocker ./cmd/main.go
+ 
+CMD [ "/godocker" ]

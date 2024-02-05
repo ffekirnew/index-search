@@ -111,6 +111,7 @@ func StartFeederSystem() {
 }
 
 func getTokIndexer(tok string) string {
+	fmt.Println(tok)
 	t := tok[0]
 	indexerURL := librarianEndpoints["*"]
 
@@ -132,6 +133,10 @@ func indexAdder(ch chan token, done chan bool) {
 			serializedPayload, err := json.Marshal(tok)
 			if err != nil {
 				common.Warn("Unable to serialize the payload. Error:" + err.Error())
+			}
+
+			if len(tok.Token) == 0 {
+				return
 			}
 
 			indexerURL := getTokIndexer(tok.Token)
@@ -327,6 +332,7 @@ func getFile(URL string) (string, error) {
 
 // FeedHandler start processing the payload which contains the file to index.
 func FeedHandler(w http.ResponseWriter, r *http.Request) {
+	common.EnableCors(&w, r)
 	if r.Method == "GET" {
 		ch := make(chan []document)
 		dGetAllCh <- dAllMsg{Ch: ch}

@@ -3,25 +3,26 @@ version: "3"
 services:
   a_m_librarian:
     build: librarian/.
-    image: librarian
+    image: librarian-v4
     environment:
       - API_PORT=${A_M_PORT}
     ports:
       - ${A_M_PORT}:${A_M_PORT}
   n_z_librarian:
-    image: librarian
+    image: librarian-v4
     environment:
       - API_PORT=${N_Z_PORT}
     ports:
       - ${N_Z_PORT}:${N_Z_PORT}
   others_librarian:
-    image: librarian
+    image: librarian-v4
     environment:
       - API_PORT=${OTHERS_PORT}
     ports:
       - ${OTHERS_PORT}:${OTHERS_PORT}
   concierge:
     build: concierge/.
+    image: concierge-v4
     environment:
       - API_PORT=${CONCIERGE_PORT}
       - LIB_A_M=http://a_m_librarian:${A_M_PORT}/api
