@@ -2,10 +2,10 @@ openapi: 3.0.0
 servers:
   - url: /api
 info:
-  title: Goophr Concierge API
+  title: Index Search Concierge API
   version: "1.0"
   description: >
-    API responsible for responding to user input and communicating with Goophr
+    API responsible for responding to user input and communicating with Index Search
     Librarian.
 paths:
   /feeder:
