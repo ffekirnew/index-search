@@ -7,7 +7,7 @@ const DashboardLayout = () => {
   return (
     <Grid
       templateAreas={{
-        lg: `"aside navbar"
+        lg: `"aside main"
              "aside main"`,
         base: `"navbar"
            "main"`,
@@ -24,9 +24,6 @@ const DashboardLayout = () => {
           <SideBar />
         </GridItem>
       </Show>
-      <GridItem area={"navbar"} paddingX={5}>
-        {/* <NavBar /> */}
-      </GridItem>
       <GridItem area={"main"} overflowY={"scroll"} paddingX={5}>
         <Outlet />
       </GridItem>

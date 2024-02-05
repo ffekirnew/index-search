@@ -7,33 +7,23 @@ import {
   VStack,
   Text,
   useColorMode,
+  HStack,
+  Image,
 } from "@chakra-ui/react";
 import NavBar from "../components/landing/NavBar";
 import { useNavigate } from "react-router-dom";
-import { z } from "zod";
-import { FieldValues, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import "../../style.css";
-
-const schema = z.object({
-  search: z
-    .string()
-    .min(3, { message: "Search queries must be 3 or more charachters." }),
-});
-
-type SearchFormSchema = z.infer<typeof schema>;
+import { useRef } from "react";
+import logo from "../assets/react.svg";
 
 const LandingPage = () => {
+  const searchBoxRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<SearchFormSchema>({ resolver: zodResolver(schema) });
+
   const { colorMode } = useColorMode();
 
-  const onSearch = (data: FieldValues) => {
-    navigate("/results/"+data.search ?? " ")
+  const onSearch = () => {
+    navigate("/results/" + searchBoxRef?.current?.value ?? "");
   };
 
   return (
@@ -47,18 +37,22 @@ const LandingPage = () => {
         justifyContent={"center"}
         alignItems={"center"}
         paddingX={40}
+        gap={10}
       >
-        <Heading fontSize={"7xl"} fontWeight={"600"}>
-          Index Search
-        </Heading>
-        <form onSubmit={handleSubmit(onSearch)}>
+        <HStack gap={10}>
+          <Image src={logo} width={"120px"} />
+          <Heading fontSize={"7xl"} fontWeight={"600"}>
+            Index Search
+          </Heading>
+        </HStack>
+        <form onSubmit={onSearch}>
           <InputGroup bgClip={"content-box"}>
             <Input
+              ref={searchBoxRef}
               variant={"outline"}
               type="text"
               placeholder="Search any term..."
               rounded={"2xl"}
-              {...register("search")}
             />
             <InputRightElement width={"5.5rem"}>
               <Button
@@ -72,7 +66,7 @@ const LandingPage = () => {
                 roundedEnd={"2xl"}
                 roundedStart={0}
               >
-                  <Text>Search</Text>
+                <Text>Search</Text>
               </Button>
             </InputRightElement>
           </InputGroup>
