@@ -10,11 +10,10 @@ import {
 } from "@chakra-ui/react";
 import NavBar from "../components/landing/NavBar";
 import { useNavigate } from "react-router-dom";
-import useSearch from "../service/hooks/search/useSearch";
-import LoadingRipples from "../components/ui/LoadingRipples";
 import { z } from "zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import "../../style.css";
 
 const schema = z.object({
   search: z
@@ -31,14 +30,11 @@ const LandingPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<SearchFormSchema>({ resolver: zodResolver(schema) });
-  const { search, isLoading, isSuccess } = useSearch();
   const { colorMode } = useColorMode();
 
   const onSearch = (data: FieldValues) => {
-    search(data.search);
+    navigate("/results/"+data.search ?? " ")
   };
-
-  if (isSuccess) navigate("/results");
 
   return (
     <VStack width={"100%"} height={"100vh"} gap={0}>
@@ -75,13 +71,8 @@ const LandingPage = () => {
                 onClick={onSearch}
                 roundedEnd={"2xl"}
                 roundedStart={0}
-                disabled={isLoading}
               >
-                {isLoading ? (
-                  <LoadingRipples color={"gray.200"} size={"sm"} />
-                ) : (
                   <Text>Search</Text>
-                )}
               </Button>
             </InputRightElement>
           </InputGroup>

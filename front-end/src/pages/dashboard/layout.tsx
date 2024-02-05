@@ -25,7 +25,7 @@ const DashboardLayout = () => {
         </GridItem>
       </Show>
       <GridItem area={"navbar"} paddingX={5}>
-        <NavBar />
+        {/* <NavBar /> */}
       </GridItem>
       <GridItem area={"main"} overflowY={"scroll"} paddingX={5}>
         <Outlet />

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export interface FeederRequest {
-  title: number;
+  title: string;
   url: string;
 }
 
@@ -10,7 +10,7 @@ export interface FeederResponse {
   msg: string;
 }
 
-interface QueryResult {
+export interface QueryResult {
   title: string;
   url: string;
 }

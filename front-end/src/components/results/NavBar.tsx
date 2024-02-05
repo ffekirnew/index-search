@@ -14,6 +14,7 @@ import SearchBox from "./SearchBox";
 
 const NavBar = () => {
   const { colorMode } = useColorMode();
+
   return (
     <Flex
       zIndex={999}
@@ -35,7 +36,7 @@ const NavBar = () => {
             </Heading>
           </HStack>
         </Link>
-        <SearchBox action={() => {}} />
+        <SearchBox />
       </HStack>
       <HStack>
         <ColorModeSwitch />

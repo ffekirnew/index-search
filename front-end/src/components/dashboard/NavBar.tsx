@@ -19,11 +19,12 @@ import { BiMenu } from "react-icons/bi";
 import { useRef } from "react";
 import SideBar from "./SideBar";
 import { BsChevronDown, BsSearch } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const searchBoxRef = useRef<HTMLInputElement>(null);
-
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
   const btnRef = useRef<HTMLButtonElement>(null);
 
   return (
@@ -52,16 +53,18 @@ const NavBar = () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <Button type="submit" variant={"ghost"}>
+            <Button variant={"ghost"} onClick={()=>{
+              navigate("/results/"+searchBoxRef?.current?.value ?? " ")
+            }}>
               <BsSearch />
             </Button>
           </InputRightElement>
         </InputGroup>
       </form>
       <Menu>
-        <MenuButton as={Button} rightIcon={<BsChevronDown />} width={"10rem"}>
+      {/*  <MenuButton as={Button} rightIcon={<BsChevronDown />} width={"10rem"}>
           Filter
-        </MenuButton>
+        </MenuButton> */}
         <MenuList>
           <MenuItem>All</MenuItem>
           <MenuItem>Group 51</MenuItem>

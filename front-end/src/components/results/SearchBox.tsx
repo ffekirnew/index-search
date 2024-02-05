@@ -6,16 +6,19 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-interface Props {
-  action: () => void;
-}
-const SearchBox = ({ action }: Props) => {
+const SearchBox = () => {
   const { colorMode } = useColorMode();
+  const searchBoxRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
 
   return (
     <InputGroup bgClip={"content-box"}>
       <Input
+        ref={searchBoxRef}
         variant={"outline"}
         type="text"
         placeholder="Search any term..."
@@ -26,7 +29,9 @@ const SearchBox = ({ action }: Props) => {
           bgColor={colorMode == "dark" ? "brand.primary" : "brand.primary"}
           color={"gray.50"}
           variant={"outline"}
-          onClick={action}
+          onClick={()=>{
+            navigate(`/results/${searchBoxRef?.current?.value ?? " "}`)
+          }}
           roundedEnd={"2xl"}
           roundedStart={0}
         >
