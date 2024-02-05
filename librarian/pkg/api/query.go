@@ -18,7 +18,7 @@ type result struct {
 	Count int         `json:"count"`
 	Data  []docResult `json:"data"`
 }
-
+	
 // getResults returns unsorted search results & a map of documents containing tokens.
 func getResults(out chan tcMsg, count int) tCatalog {
 	tc := tCatalog{}
