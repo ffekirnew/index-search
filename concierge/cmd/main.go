@@ -18,6 +18,6 @@ func main() {
 	api.StartFeederSystem()
 
 	port := fmt.Sprintf(":%s", os.Getenv("API_PORT"))
-	common.Log(fmt.Sprintf("Starting Goophr Concierge server on port %s...", port))
+	common.Log(fmt.Sprintf("Starting Index Search Concierge server on port %s...", port))
 	http.ListenAndServe(port, nil)
 }

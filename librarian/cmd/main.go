@@ -18,6 +18,6 @@ func main() {
 	api.StartIndexSystem()
 
 	port := fmt.Sprintf(":%s", os.Getenv("API_PORT"))
-	common.Log(fmt.Sprintf("Starting Goophr Librarian server on port %s...", port))
+	common.Log(fmt.Sprintf("Starting Index Search Librarian server on port %s...", port))
 	http.ListenAndServe(port, nil)
 }
