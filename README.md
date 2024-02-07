@@ -17,7 +17,7 @@ Index search is a simple search engine that uses an inverted index to search for
 The search engine can be used in the following scenarios:
 
 - Searching for documents in a collection of documents
-- Searching for documents in a collection of documents and ordering them by relevance
+- Ordering documents by relevance
 
 ## [Project Structure](#project-structure)
 
