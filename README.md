@@ -47,7 +47,7 @@ Therefore, to run the project.
 1. Clone the project
 
 ```bash
-git clone https://github.com/random-starlord/index-search.git
+git clone https://github.com/ffekirnew/index-search.git
 ```
 
 2. Change to the root directory of the project.
